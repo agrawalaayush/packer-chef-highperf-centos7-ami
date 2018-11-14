@@ -51,6 +51,7 @@
         "scripts/install_chef.sh",
         "scripts/install_docker.sh",
         "scripts/install_puppet.sh",
+        "scripts/install_ssm_agent.sh",
         "scripts/config_chrony.sh",
         "scripts/disable_kdump.sh",
         "scripts/disable_rsyslog.sh",
