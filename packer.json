@@ -25,7 +25,7 @@
       "ebs_optimized": true,
       "ena_support": true,
       "sriov_support": true,
-      "instance_type": "m5.large",
+      "instance_type": "m4.large",
       "region": "eu-west-1",
       "source_ami": "ami-0f08a479491fd8645",
       "ssh_pty": true,
