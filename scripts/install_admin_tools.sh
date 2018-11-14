@@ -15,7 +15,12 @@ do
 done
 
 echo ">>> Installing EPEL-based sysadmin tools"
-rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+if yum repolist | grep -q ^epel
+then
+    echo ">>>> EPEL is already installed"
+else
+    rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+fi
 yum install -y atop bash-completion-extras htop iftop nload tcping
 
 sync
