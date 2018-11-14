@@ -38,6 +38,7 @@
   "provisioners": [
     {
       "type": "shell",
+      "execute_command": "echo 'packer' | sudo -S env {{ .Vars }} {{ .Path }}",
       "scripts": [
         "scripts/update_system.sh",
         "scripts/update_grub.sh",
