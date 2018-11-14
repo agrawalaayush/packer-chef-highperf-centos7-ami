@@ -14,10 +14,20 @@ set -o errexit -o nounset -o pipefail
 # - cd packer-chef-highperf-centos7-ami # enter the repo's directory
 # - Find the volume using "lsblk". It's probaly named "xvdf"
 # - export DEVICE="/dev/xvdf" # export the DEVICE variable for this script
+# - ./create_base_ami.sh # start this script
+#
+# Wait until the script has completed. Can can take 10 minutes or so.
 #
 # When complete, convert the $DEVICE into an AMI by creating a snapshot of the
 # EBS volume and converting the snapshot into an AMI.  These steps can be done
 # with the AWS web console or using the CLI tools.
+#
+# How to create an AMI of the volume?
+#
+# - Detach the additional volume from the instance in the EC2 Dashboard menu Volumes
+# - Create a snapshot of the detached volume
+# - Create an AMI of the created snapshot
+#
 
 : ${DEVICE:?"ERROR: DEVICE must be set"}
 
