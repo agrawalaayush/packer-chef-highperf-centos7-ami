@@ -46,7 +46,7 @@
         "scripts/tune_system.sh",
         "scripts/install_essentials.sh",
         "scripts/install_admin_tools.sh",
-        "scripts/install_aws_compatibility.sh",
+        "scripts/install_aws_compatibiliy.sh",
         "scripts/install_chef.sh",
         "scripts/install_docker.sh",
         "scripts/install_puppet.sh",
