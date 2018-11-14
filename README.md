@@ -17,6 +17,8 @@ export AWS_PROFILE='myprofile'
 packer build packer.json
 ```
 
+Be aware that this means that you trust my AMI enough to build your image on. If you want to know for certain what you build, create a base AMI first using the script create_base_ami.sh in the root of this repository.
+
 ## Consuming existing AMIs
 
 ### Latest AMIs
