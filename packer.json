@@ -37,17 +37,25 @@
   "post-processors": [],
   "provisioners": [
     {
-      "destination": "/tmp/install_prereqs.sh",
-      "source": "scripts/install_prereqs.sh",
-      "type": "file"
-    },
-    {
-      "inline": [
-        "sudo chmod 0755 /tmp/install_prereqs.sh",
-        "sudo /tmp/install_prereqs.sh"
-      ],
-      "inline_shebang": "/bin/bash -e",
-      "type": "shell"
+      "type": "shell",
+      "scripts": [
+        "scripts/update_system.sh",
+        "scripts/update_grub.sh",
+        "scripts/disable_selinux.sh",
+        "scripts/config_sshd.sh",
+        "scripts/tune_system.sh",
+        "scripts/install_essentials.sh",
+        "scripts/install_admin_tools.sh",
+        "scripts/install_aws_compatibility.sh",
+        "scripts/install_chef.sh",
+        "scripts/install_docker.sh",
+        "scripts/install_puppet.sh",
+        "scripts/config_chrony.sh",
+        "scripts/disable_kdump.sh",
+        "scripts/disable_rsyslog.sh",
+        "scripts/config_journald.sh",
+        "scripts/install_final.sh"
+      ]
     }
   ]
 }
