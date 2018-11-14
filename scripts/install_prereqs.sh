@@ -74,7 +74,7 @@ dracut -f --kver $latest_kernel
 echo ">>> Installing Puppet client"
 yum install -y https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm
 yum install -y puppet
-systemctl enable puppet.service
+# puppet is not enabled, because not everyone may like that
 
 echo ">>> Adding group [nogroup]"
 /usr/sbin/groupadd -f nogroup
