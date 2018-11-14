@@ -24,9 +24,16 @@ set -o errexit -o nounset -o pipefail
 #
 # How to create an AMI of the volume?
 #
-# - Detach the additional volume from the instance in the EC2 Dashboard menu Volumes
-# - Create a snapshot of the detached volume
-# - Create an AMI of the created snapshot
+# - Detach the additional volume from the instance in the EC2 Dashboard menu
+#   Volumes.
+# - Create a snapshot of the detached volume by selecting it, and executing the
+#   action "Create Snapshot". Provide a useful description for the snapshot.
+# - Create an AMI of the created snapshot in the EC2 Dashboard menu Snapshots
+#   by selecting the snapshot and executing the action "Create Image". Provide
+#   the following values:
+#   - Name: Useful, short name.
+#   - Description: Description, more verbose, including for example the script name and repo URL used to create it.
+#   - Virtualisation type: Hardware-assisted vistualisation
 #
 
 : ${DEVICE:?"ERROR: DEVICE must be set"}
