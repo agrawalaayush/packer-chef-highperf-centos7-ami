@@ -26,7 +26,7 @@ mkdir -p "$ROOTFS"
 mount "$PARTITION" "$ROOTFS"
 
 rpm --root="$ROOTFS" --initdb
-rpm --root="$ROOTFS" -ivh \
+rpm --root="$ROOTFS" --nodeps -ivh \
   https://mirrors.edge.kernel.org/centos/7.5.1804/os/x86_64/Packages/centos-release-7-5.1804.el7.centos.x86_64.rpm
 yum --installroot="$ROOTFS" --nogpgcheck -y groupinstall core
 yum --installroot="$ROOTFS" --nogpgcheck -y install openssh-server grub2 tuned kernel chrony
