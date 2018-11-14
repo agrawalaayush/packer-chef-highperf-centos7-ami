@@ -4,6 +4,17 @@ set -o errexit -o nounset -o pipefail
 # Run from a CentOS or RHEL instance on AWS with a secondary 8GB EBS volume
 # ($DEVICE) attached to create a fresh installation of CentOS7 on $DEVICE.
 
+### Procedure to create an image on an additional volume on an existing instance:
+#
+# - Create an 8 GB volume in the same availability zone as your instance.
+# - Attach the volume to your instance.
+# - Log in to your instance and become root.
+# - yum install -y git # install git
+# - cd && git clone https://github.com/siebrand/packer-chef-highperf-centos7-ami.git # clone this repo in root's home
+# - cd packer-chef-highperf-centos7-ami # enter the repo's directory
+# - Find the volume using "lsblk". It's probaly named "xvdf"
+# - export DEVICE="/dev/xvdf" # export the DEVICE variable for this script
+#
 # When complete, convert the $DEVICE into an AMI by creating a snapshot of the
 # EBS volume and converting the snapshot into an AMI.  These steps can be done
 # with the AWS web console or using the CLI tools.
