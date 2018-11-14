@@ -1,10 +1,8 @@
 # High Performance CentOS 7 AMI
 
-The stock RHEL and CentOS AMIs are highly unoptimized and typically out of date.  This project aims to create a high-performance CentOS 7 image that is unencumbered of product codes or other restrictions. It now also includes a recent Linux kernel and Docker.
+The stock RHEL and CentOS AMIs are highly unoptimized and typically out of date. This project aims to create a high-performance CentOS 7 image that is unencumbered of product codes or other restrictions.
 
-In informal testing (building Chef server clusters) we've been able to cut deploy times by 50%.
-
-These images are built by Chef's Customer Success team for the benefit of our customers.  For that reason, all images include the latest ChefDK :)
+It is based on https://github.com/irvingpop/packer-chef-highperf-centos7-ami, but without Chef and Docker, and with some extra packages and puppet.
 
 Credit to the DCOS team, this project is based on their [CentOS 7 cloud image](https://github.com/dcos/dcos/tree/master/cloud_images/centos7)
 
@@ -21,26 +19,28 @@ packer build packer.json
 
 ## Consuming existing AMIs
 
-### From Terraform
-```
-data "aws_ami" "centos" {
-  most_recent = true
-  owners = ["446539779517"] # Chef success
-
-  filter {
-    name   = "name"
-    values = ["chef-highperf-centos7-*"]
-  }
-}
-
-resource "aws_instance" "web" {
-  ami           = "${data.aws_ami.centos.id}"
-  instance_type = "t2.micro"
-}
-```
-
 ### Latest AMIs
-The latest AMIs were Published on 2018/10/31:
+
+The latest AMIs were Published on 2018/11/14:
+
+```
+eu-west-1: TBD
+```
+
+Changelog:
+* Forked from  https://github.com/irvingpop/packer-chef-highperf-centos7-ami.
+* Updated README.md.
+* Updated packer.json with own sources and names.
+* Install additional packages: bzip2 nfs-utils nmap screen tmpwatch tree zip htop tcping puppet
+* Remove Chef Workstation and Docker installations
+* Do not disable rsyslog
+
+
+----
+
+### Previous AMIs
+
+Published on 2018/10/31:
 
 ```
 ca-central-1: ami-082b857c6ad643ad5
@@ -61,7 +61,6 @@ Changelog:
 
 ----
 
-### Previous AMIs
 Published on 2018/08/17:
 
 ```
