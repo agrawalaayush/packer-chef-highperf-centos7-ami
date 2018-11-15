@@ -27,7 +27,7 @@ Please consider AMIs expired 2 months after they were published. It may be aroun
 The latest AMIs were Published on 2018/11/14:
 
 ```
-eu-west-1:
+eu-west-1: ami-0d92277784bf7001a
 ```
 
 Changelog:
@@ -40,7 +40,6 @@ Changelog:
 * Added packages to admin tools: nfs-utils nmap screen tmpwatch tree zip htop tcping puppet.
 * Disabled modules that install Chef Workstation and Docker.
 * Disabled module that disables rsyslog.
-* Old release notes moved to HISTORY.md.
 
 ----
 
