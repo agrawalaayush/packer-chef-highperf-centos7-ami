@@ -22,5 +22,3 @@ else
     rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 fi
 yum install -y atop bash-completion-extras htop iftop nload tcping
-
-sync

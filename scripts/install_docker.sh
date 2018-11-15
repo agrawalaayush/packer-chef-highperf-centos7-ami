@@ -12,5 +12,3 @@ systemctl enable docker.service
 
 echo ">>> Adding group [nogroup]"
 /usr/sbin/groupadd -f nogroup
-
-sync

@@ -13,5 +13,3 @@ GRUB_CMDLINE_LINUX="console=ttyS0,115200n8 console=tty0 crashkernel=auto scsi_mo
 GRUB_DISABLE_RECOVERY="true"
 EOF
 grub2-mkconfig -o /boot/grub2/grub.cfg
-
-sync

@@ -16,5 +16,3 @@ cat > /etc/security/limits.d/20-nproc.conf<<EOF
 *   soft  nofile    1048576
 *   hard  nofile    1048576
 EOF
-
-sync

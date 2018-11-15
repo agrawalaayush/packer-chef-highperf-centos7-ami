@@ -7,5 +7,3 @@ echo -e "\nPermitRootLogin without-password" >> /etc/ssh/sshd_config
 
 sed -i '/^\s*UseDNS /d' /etc/ssh/sshd_config
 echo -e "\nUseDNS no" >> /etc/ssh/sshd_config
-
-sync
